@@ -3,5 +3,6 @@ class Yarn < ApplicationRecord
   enum spinned_as: { worsted: 0, semi_worsted: 1, woollen: 2 }
   enum dye: { undyed: 0, natural_dye: 1, chemical_dye: 2, unknown_dye: 3}
 
-  belongs_to :spinned_by, class_name: 'User'
+  has_many :skeins
+  has_many :compositions
 end
