@@ -1,0 +1,42 @@
+<p>
+  <strong>First name:</strong>
+  <%= @profile.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @profile.last_name %>
+</p>
+
+<p>
+  <strong>Is guild member:</strong>
+  <%= @profile.is_guild_member %>
+</p>
+
+<p>
+  <strong>Street address:</strong>
+  <%= @profile.street_address %>
+</p>
+
+<p>
+  <strong>Suburb:</strong>
+  <%= @profile.suburb %>
+</p>
+
+<p>
+  <strong>Postcode:</strong>
+  <%= @profile.postcode %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @profile.country %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @profile.user.role %>
+</p>
+
+<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<%= link_to 'Back', profiles_path %>
