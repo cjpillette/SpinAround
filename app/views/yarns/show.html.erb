@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @yarn.weight %>
+</p>
+
+<p>
+  <strong>Dye:</strong>
+  <%= @yarn.dye %>
+</p>
+
+<p>
+  <strong>Spinned as:</strong>
+  <%= @yarn.spinned_as %>
+</p>
+
+<p>
+  <strong>Metrage:</strong>
+  <%= @yarn.metrage %>
+</p>
+
+<p>
+  <strong>Diameter:</strong>
+  <%= @yarn.diameter %>
+</p>
+
+<p>
+  <strong>Ply:</strong>
+  <%= @yarn.ply %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @yarn.color %>
+</p>
+
+<p>
+  <strong>Origin:</strong>
+  <%= @yarn.origin %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @yarn.description %>
+</p>
+
+<%= link_to 'Edit', edit_yarn_path(@yarn) %> |
+<%= link_to 'Back', yarns_path %>

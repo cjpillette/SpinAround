@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @skein.price %>
+</p>
+
+<p>
+  <strong>Spinned by:</strong>
+  <%= @skein.spinned_by %>
+</p>
+
+<p>
+  <strong>Skein available:</strong>
+  <%= @skein.skein_available %>
+</p>
+
+<p>
+  <strong>Photo main:</strong>
+  <%= @skein.photo_main %>
+</p>
+
+<p>
+  <strong>Yarn:</strong>
+  <%= @skein.yarn %>
+</p>
+
+<%= link_to 'Edit', edit_skein_path(@skein) %> |
+<%= link_to 'Back', skeins_path %>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @fibre_type.name %>
+</p>
+
+<p>
+  <strong>Isanimal:</strong>
+  <%= @fibre_type.isAnimal %>
+</p>
+
+<%= link_to 'Edit', edit_fibre_type_path(@fibre_type) %> |
+<%= link_to 'Back', fibre_types_path %>

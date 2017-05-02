@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Yarns</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Weight</th>
+      <th>Dye</th>
+      <th>Spinned as</th>
+      <th>Metrage</th>
+      <th>Diameter</th>
+      <th>Ply</th>
+      <th>Color</th>
+      <th>Origin</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @yarns.each do |yarn| %>
+      <tr>
+        <td><%= yarn.weight %></td>
+        <td><%= yarn.dye %></td>
+        <td><%= yarn.spinned_as %></td>
+        <td><%= yarn.metrage %></td>
+        <td><%= yarn.diameter %></td>
+        <td><%= yarn.ply %></td>
+        <td><%= yarn.color %></td>
+        <td><%= yarn.origin %></td>
+        <td><%= yarn.description %></td>
+        <td><%= link_to 'Show', yarn %></td>
+        <td><%= link_to 'Edit', edit_yarn_path(yarn) %></td>
+        <td><%= link_to 'Destroy', yarn, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Yarn', new_yarn_path %>

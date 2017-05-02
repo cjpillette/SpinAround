@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fibre type:</strong>
+  <%= @composition.fibre_type %>
+</p>
+
+<p>
+  <strong>Percent content:</strong>
+  <%= @composition.percent_content %>
+</p>
+
+<p>
+  <strong>Yarn:</strong>
+  <%= @composition.yarn %>
+</p>
+
+<%= link_to 'Edit', edit_composition_path(@composition) %> |
+<%= link_to 'Back', compositions_path %>

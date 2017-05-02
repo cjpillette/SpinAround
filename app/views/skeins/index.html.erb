@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Skeins</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Price</th>
+      <th>Spinned by</th>
+      <th>Skein available</th>
+      <th>Photo main</th>
+      <th>Yarn</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @skeins.each do |skein| %>
+      <tr>
+        <td><%= skein.price %></td>
+        <td><%= skein.spinned_by %></td>
+        <td><%= skein.skein_available %></td>
+        <td><%= skein.photo_main %></td>
+        <td><%= skein.yarn %></td>
+        <td><%= link_to 'Show', skein %></td>
+        <td><%= link_to 'Edit', edit_skein_path(skein) %></td>
+        <td><%= link_to 'Destroy', skein, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Skein', new_skein_path %>
