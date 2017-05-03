@@ -9,34 +9,21 @@
 </p>
 
 <p>
-  <strong>Is guild member:</strong>
-  <%= @profile.is_guild_member %>
+  <% if @profile.is_guild_member == true %>
+  member of the guild
+  <% else %>
+  not a member of the guild
+  <% end %>
 </p>
 
 <p>
-  <strong>Street address:</strong>
-  <%= @profile.street_address %>
-</p>
-
-<p>
-  <strong>Suburb:</strong>
-  <%= @profile.suburb %>
-</p>
-
-<p>
-  <strong>Postcode:</strong>
-  <%= @profile.postcode %>
-</p>
-
-<p>
-  <strong>Country:</strong>
+  <strong>Address:</strong>
+  <%= @profile.street_address %>,
+  <%= @profile.suburb %>,
+  <%= @profile.postcode %>,
   <%= @profile.country %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @profile.user.role %>
-</p>
 
 <%= link_to 'Edit', edit_profile_path(@profile) %> |
 <%= link_to 'Back', profiles_path %>
