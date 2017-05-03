@@ -1,29 +1,79 @@
 User.create!(
-  email: "admin@test.com",
+  email: "chief@test.com",
   password: "123456",
   password_confirmation: "123456",
-  role: "site_admin"
+  role: "admin"
 )
-
-puts "1 Admin user created"
 
 User.create!(
-  email: "spinner@test.com",
+  email: "captain@test.com",
   password: "123456",
   password_confirmation: "123456",
-  role: "spinner_user",
+  role: "admin"
 )
 
-puts "1 spinner user created"
+puts "2 Admin users created"
 
 User.create!(
-  email: "purchaser@test.com",
+  email: "susan@test.com",
   password: "123456",
   password_confirmation: "123456",
-  role: "purchaser_user",
+  role: "spinner",
 )
 
-puts "1 purchaser user created"
+User.create!(
+  email: "sally@test.com",
+  password: "123456",
+  password_confirmation: "123456",
+  role: "spinner",
+)
+
+User.create!(
+  email: "sarah@test.com",
+  password: "123456",
+  password_confirmation: "123456",
+  role: "spinner",
+)
+
+User.create!(
+  email: "sophie@test.com",
+  password: "123456",
+  password_confirmation: "123456",
+  role: "spinner",
+)
+
+puts "4 spinners created"
+
+User.create!(
+  email: "aaron@test.com",
+  password: "123456",
+  password_confirmation: "123456",
+  role: "purchaser",
+)
+
+User.create!(
+  email: "amelie@test.com",
+  password: "123456",
+  password_confirmation: "123456",
+  role: "purchaser",
+)
+
+User.create!(
+  email: "albert@test.com",
+  password: "123456",
+  password_confirmation: "123456",
+  role: "purchaser",
+)
+
+User.create!(
+  email: "amandine@test.com",
+  password: "123456",
+  password_confirmation: "123456",
+  role: "purchaser",
+)
+
+
+puts "4 purchasers user created"
 
 FibreType.create!(
     name: "Merino",
