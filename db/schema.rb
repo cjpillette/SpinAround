@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170502015536) do
+ActiveRecord::Schema.define(version: 20170502042133) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "compositions", force: :cascade do |t|
+    t.integer  "fibre_type_id"
+    t.integer  "percent_content"
+    t.integer  "yarn_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["fibre_type_id"], name: "index_compositions_on_fibre_type_id", using: :btree
+    t.index ["yarn_id"], name: "index_compositions_on_yarn_id", using: :btree
+  end
+
+  create_table "fibre_types", force: :cascade do |t|
+    t.string   "name"
+    t.boolean  "isAnimal"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "profiles", force: :cascade do |t|
     t.string   "first_name"
@@ -27,6 +44,18 @@ ActiveRecord::Schema.define(version: 20170502015536) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.index ["user_id"], name: "index_profiles_on_user_id", using: :btree
+  end
+
+  create_table "skeins", force: :cascade do |t|
+    t.decimal  "price"
+    t.integer  "spinned_by_id"
+    t.integer  "skein_available"
+    t.string   "photo_main"
+    t.integer  "yarn_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["spinned_by_id"], name: "index_skeins_on_spinned_by_id", using: :btree
+    t.index ["yarn_id"], name: "index_skeins_on_yarn_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -47,5 +76,23 @@ ActiveRecord::Schema.define(version: 20170502015536) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  create_table "yarns", force: :cascade do |t|
+    t.integer  "weight"
+    t.integer  "dye"
+    t.integer  "spinned_as"
+    t.integer  "metrage"
+    t.decimal  "diameter"
+    t.integer  "ply"
+    t.string   "color"
+    t.string   "origin"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_foreign_key "compositions", "fibre_types"
+  add_foreign_key "compositions", "yarns"
   add_foreign_key "profiles", "users"
+  add_foreign_key "skeins", "users", column: "spinned_by_id"
+  add_foreign_key "skeins", "yarns"
 end

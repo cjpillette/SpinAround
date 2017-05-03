@@ -1,0 +1,42 @@
+<%= form_for(skein) do |f| %>
+  <% if skein.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(skein.errors.count, "error") %> prohibited this skein from being saved:</h2>
+
+      <ul>
+      <% skein.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :price %>
+    <%= f.text_field :price %>
+  </div>
+
+  <div class="field">
+    <%= f.label :spinned_by_id %>
+    <%= f.text_field :spinned_by_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :skein_available %>
+    <%= f.number_field :skein_available %>
+  </div>
+
+  <div class="field">
+    <%= f.label :photo_main %>
+    <%= f.file_field :photo_main %>
+  </div>
+
+  <div class="field">
+    <%= f.label :yarn_id %>
+    <%= f.text_field :yarn_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

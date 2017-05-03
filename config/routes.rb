@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  resources :skeins
+  resources :compositions
+  resources :fibre_types
+  resources :yarns
   resources :profiles
   devise_for :users
   root 'pages#index'

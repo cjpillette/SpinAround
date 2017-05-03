@@ -1,0 +1,37 @@
+<h1>Skeins</h1>
+<%= link_to 'New Skein', new_skein_path %>
+  <% @skeins.each do |skein| %>
+    <div class="card" style="width: 20rem;">
+      <%= image_tag(skein.photo_main, class: 'card-img-top', width: '100%') %>
+      <div class="card-block">
+        <div class="row">
+          <h4 class="card-title">
+            <div class="skein-price">
+              <%= skein.price %> AUD
+            </div>
+            <div class="shopping-cart">
+              <%= fa_icon('cart-arrow-down') %>
+            </div>
+          </h4>
+        </div>
+        <div class="row">
+          <div class="skein-spinner">
+            Spinned by: <%= skein.spinned_by.email %>
+          </div>
+          <div class="skein-availability">
+            <%= skein.skein_available %> skeins available
+          </div>
+          <%= link_to fa_icon('ravelry'), yarn_path(skein.yarn) %>
+        </div>
+
+        <div class="row">
+          <p class="card-text">Some text describing the product goes here and it sure is fabulous</p>
+          <%= link_to fa_icon('info-circle'), skein %>
+          <%= link_to fa_icon('pencil-square-o'), edit_skein_path(skein) %>
+          <%= link_to fa_icon('trash'), skein, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+
+<br>
