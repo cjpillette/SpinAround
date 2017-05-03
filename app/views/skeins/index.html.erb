@@ -2,7 +2,7 @@
 <%= link_to 'New Skein', new_skein_path %>
   <% @skeins.each do |skein| %>
     <div class="card" style="width: 20rem;">
-      <img class="card-img-top" src="http://placehold.it/350x200" alt="Card image cap">
+      <%= image_tag(skein.photo_main, class: 'card-img-top', width: '100%') %>
       <div class="card-block">
         <div class="row">
           <h4 class="card-title">
