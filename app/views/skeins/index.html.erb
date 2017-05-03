@@ -1,5 +1,5 @@
 <h1>Skeins</h1>
-<%= link_to 'New Skein', new_skein_path %>
+<%= link_to 'New Skein', new_skein_path if logged_in?(:site_admin, :spinner_seller)%>
   <% @skeins.each do |skein| %>
     <div class="card" style="width: 20rem;">
       <%= image_tag(skein.photo_main, class: 'card-img-top', width: '100%') %>
@@ -27,8 +27,10 @@
         <div class="row">
           <p class="card-text">Some text describing the product goes here and it sure is fabulous</p>
           <%= link_to fa_icon('info-circle'), skein %>
-          <%= link_to fa_icon('pencil-square-o'), edit_skein_path(skein) %>
-          <%= link_to fa_icon('trash'), skein, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% if current_user == skein.spinned_by || logged_in?(:site_admin) %>
+          <%= link_to fa_icon('pencil-square-o'), edit_skein_path(skein)  %>
+          <%= link_to fa_icon('trash'), skein, method: :delete, data: { confirm: 'Are you sure?' }  %>
+          <% end %>
         </div>
       </div>
     </div>

@@ -2,14 +2,14 @@ User.create!(
   email: "chief@test.com",
   password: "123456",
   password_confirmation: "123456",
-  role: "admin"
+  roles: "site_admin"
 )
 
 User.create!(
   email: "captain@test.com",
   password: "123456",
   password_confirmation: "123456",
-  role: "admin"
+  roles: "site_admin"
 )
 
 puts "2 Admin users created"
@@ -18,28 +18,28 @@ User.create!(
   email: "susan@test.com",
   password: "123456",
   password_confirmation: "123456",
-  role: "spinner",
+  roles: "spinner_seller",
 )
 
 User.create!(
   email: "sally@test.com",
   password: "123456",
   password_confirmation: "123456",
-  role: "spinner",
+  roles: "spinner_seller",
 )
 
 User.create!(
   email: "sarah@test.com",
   password: "123456",
   password_confirmation: "123456",
-  role: "spinner",
+  roles: "spinner_seller",
 )
 
 User.create!(
   email: "sophie@test.com",
   password: "123456",
   password_confirmation: "123456",
-  role: "spinner",
+  roles: "spinner_seller",
 )
 
 puts "4 spinners created"
@@ -48,30 +48,29 @@ User.create!(
   email: "aaron@test.com",
   password: "123456",
   password_confirmation: "123456",
-  role: "purchaser",
+  roles: "user",
 )
 
 User.create!(
   email: "amelie@test.com",
   password: "123456",
   password_confirmation: "123456",
-  role: "purchaser",
+  roles: "user",
 )
 
 User.create!(
   email: "albert@test.com",
   password: "123456",
   password_confirmation: "123456",
-  role: "purchaser",
+  roles: "user",
 )
 
 User.create!(
   email: "amandine@test.com",
   password: "123456",
   password_confirmation: "123456",
-  role: "purchaser",
+  roles: "user",
 )
-
 
 puts "4 purchasers user created"
 
@@ -169,3 +168,29 @@ Composition.create!(
 )
 
 puts "yarn with 2 compositions created"
+
+Skein.create!(
+    price: 31.5,
+    spinned_by_id: 3,
+    skein_available: 1,
+    photo_main: "hand-spun-1.jpg",
+    yarn_id: Yarn.last.id,
+)
+
+Skein.create!(
+    price: 35.5,
+    spinned_by_id: 4,
+    skein_available: 3,
+    photo_main: "hand-spun-2.jpg",
+    yarn_id: Yarn.last.id,
+)
+
+Skein.create!(
+    price: 40,
+    spinned_by_id: 5,
+    skein_available: 2,
+    photo_main: "hand-spun-3.jpg",
+    yarn_id: Yarn.first.id,
+)
+
+puts "3 skeins were created"

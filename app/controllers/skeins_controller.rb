@@ -1,5 +1,6 @@
 class SkeinsController < ApplicationController
   before_action :set_skein, only: [:show, :edit, :update, :destroy]
+  access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all, spinner_seller: :all
 
   # GET /skeins
   # GET /skeins.json
