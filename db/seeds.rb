@@ -194,3 +194,116 @@ Skein.create!(
 )
 
 puts "3 skeins were created"
+
+Profile.create!(
+    first_name: "Susan",
+    last_name: "Smith",
+    is_guild_member: true,
+    street_address: "13 lucky road",
+    suburb: "Pleasance",
+    postcode: "3067",
+    country: "Australia",
+    user_id: 3,
+)
+
+Profile.create!(
+    first_name: "Sally",
+    last_name: "Hansen",
+    is_guild_member: true,
+    street_address: "11 toad road",
+    suburb: "Frogville",
+    postcode: "3055",
+    country: "Australia",
+    user_id: 4,
+)
+
+Profile.create!(
+    first_name: "Sarah",
+    last_name: "Fortnight",
+    is_guild_member: true,
+    street_address: "114 long road",
+    suburb: "Yarraville",
+    postcode: "3020",
+    country: "Australia",
+    user_id: 5,
+)
+
+Profile.create!(
+    first_name: "Sophie",
+    last_name: "Clage",
+    is_guild_member: true,
+    street_address: "5 columbia street",
+    suburb: "Supertown",
+    postcode: "3090",
+    country: "Australia",
+    user_id: 6,
+)
+
+Profile.create!(
+    first_name: "Aaron",
+    last_name: "Alpha",
+    is_guild_member: false,
+    street_address: "45 Concrete street",
+    suburb: "Stonetown",
+    postcode: "3095",
+    country: "Australia",
+    user_id: 7,
+)
+
+Profile.create!(
+    first_name: "Amelie",
+    last_name: "Beta",
+    is_guild_member: false,
+    street_address: "4568 main road",
+    suburb: "Greaville",
+    postcode: "3009",
+    country: "Australia",
+    user_id: 8,
+)
+
+Profile.create!(
+    first_name: "Albert",
+    last_name: "Gamma",
+    is_guild_member: false,
+    street_address: "433 secondary road",
+    suburb: "Clarence",
+    postcode: "3059",
+    country: "Australia",
+    user_id: 9,
+)
+
+
+Profile.create!(
+    first_name: "Amandine",
+    last_name: "Delta",
+    is_guild_member: false,
+    street_address: "400 third road",
+    suburb: "Clarence",
+    postcode: "3059",
+    country: "Australia",
+    user_id: 10,
+)
+
+Profile.create!(
+    first_name: "Brigitte",
+    last_name: "Croissant",
+    is_guild_member: true,
+    street_address: "11 nicholson road",
+    suburb: "Carlton",
+    postcode: "3010",
+    country: "Australia",
+    user_id: 1,
+)
+
+Profile.create!(
+    first_name: "Berthe",
+    last_name: "Brioche",
+    is_guild_member: true,
+    street_address: "15 nicholson road",
+    suburb: "Carlton",
+    postcode: "3010",
+    country: "Australia",
+    user_id: 2,
+)
+
+puts "10 profiles were created"

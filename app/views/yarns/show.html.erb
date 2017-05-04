@@ -45,5 +45,7 @@
   <%= @yarn.description %>
 </p>
 
+<% if logged_in?(:site_admin, :spinner_seller) %>
 <%= link_to 'Edit', edit_yarn_path(@yarn) %> |
+<% end %>
 <%= link_to 'Back', yarns_path %>
