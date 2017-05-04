@@ -7,7 +7,7 @@
 
 <p>
   <strong>Spinned by:</strong>
-  <%= @skein.spinned_by %>
+  <%= @skein.spinned_by.profile.first_name %>
 </p>
 
 <p>
@@ -21,9 +21,10 @@
 </p>
 
 <p>
-  <strong>Yarn:</strong>
-  <%= @skein.yarn %>
+  <%= link_to 'About the yarn', yarn_path(@skein.yarn) %>
 </p>
 
+<% if current_user == @skein.spinned_by || logged_in?(:site_admin) %>
 <%= link_to 'Edit', edit_skein_path(@skein) %> |
+<% end %>
 <%= link_to 'Back', skeins_path %>

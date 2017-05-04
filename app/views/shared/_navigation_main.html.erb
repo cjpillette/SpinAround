@@ -7,24 +7,24 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Hand Spun</a>
+        <%= link_to 'Hand spun yarn', skeins_path, class: 'nav-link' %>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Contact</a>
       </li>
       <% if user_signed_in? %>
       <li>
-        <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+        <%= link_to'Logout', destroy_user_session_path, :method => :delete, class: 'nav-link' %>
       </li>
       <li>
-        <%= link_to('Update my details', edit_user_registration_path) %>
+        <%= link_to 'Update my details', edit_user_registration_path, class: 'nav-link' %>
       </li>
       <% else %>
       <li>
-        <%= link_to('Login', new_user_session_path)  %>
+        <%= link_to 'Login', new_user_session_path, class: 'nav-link' %>
       </li>
       <li>
-        <%= link_to('Sign up', new_user_registration_path)  %>
+        <%= link_to 'Sign up', new_user_registration_path, class: 'nav-link' %>
       </li>
       <% end %>
     </ul>
