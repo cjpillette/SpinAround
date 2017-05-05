@@ -5,7 +5,7 @@ class SkeinsController < ApplicationController
   # GET /skeins
   # GET /skeins.json
   def index
-    @skeins = Skein.all
+    @skeins = Skein.order(created_at: :desc).page(params[:page]).per(3)
   end
 
   # GET /skeins/1
