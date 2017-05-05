@@ -1,18 +1,24 @@
-<%= form_tag charges_path do %>
-  <article>
+<div class="skein-price">
+  <%= form_tag charges_path, id: 'chargeForm' do %>             
     <% if flash[:error].present? %>
       <div id="error_explanation">
         <p><%= flash[:error] %></p>
       </div>
     <% end %>
-    <label class="amount">
-      <span>Amount: $5.00</span>
-    </label>
-  </article>
 
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="A month's subscription"
-          data-amount="500"
-          data-locale="auto"></script>
-<% end %>
+    <label class="amount">
+      <span>Amount: $ <%= skein.price %></span>
+    </label> 
+  <% end %>
+</div>
+
+<div class="shopping-cart">
+  <%= fa_icon('cart-arrow-down') %>
+</div>
+
+<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+  data-description="<%= skein.spinned_by.profile.first_name %>'s skein"
+  data-amount="<%= 100 * skein.price %> "
+  data-locale="auto">
+</script>
