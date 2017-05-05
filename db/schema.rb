@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170503091631) do
+ActiveRecord::Schema.define(version: 20170505011255) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20170503091631) do
     t.integer  "yarn_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.text     "description"
     t.index ["spinned_by_id"], name: "index_skeins_on_spinned_by_id", using: :btree
     t.index ["yarn_id"], name: "index_skeins_on_yarn_id", using: :btree
   end

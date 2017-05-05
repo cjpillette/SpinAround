@@ -173,6 +173,7 @@ Skein.create!(
     price: 31.5,
     spinned_by_id: 3,
     skein_available: 1,
+    description: "Merino that has been combed by delicate hands",
     photo_main: "hand-spun-1.jpg",
     yarn_id: Yarn.last.id,
 )
@@ -181,6 +182,7 @@ Skein.create!(
     price: 35.5,
     spinned_by_id: 4,
     skein_available: 3,
+    description: "Mixed of merino 50percent and alpaca 50percent - green dye used",
     photo_main: "hand-spun-2.jpg",
     yarn_id: Yarn.last.id,
 )
@@ -189,6 +191,7 @@ Skein.create!(
     price: 40,
     spinned_by_id: 5,
     skein_available: 2,
+    description: "Cotton because I'm vegan",
     photo_main: "hand-spun-3.jpg",
     yarn_id: Yarn.first.id,
 )

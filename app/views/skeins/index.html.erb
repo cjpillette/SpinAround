@@ -1,4 +1,10 @@
 <h1>Skeins</h1>
+
+<%= form_tag skeins_path, :method => 'get' do %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search" %>
+<% end %>
+
 <%= link_to 'New Skein', new_skein_path if logged_in?(:site_admin, :spinner_seller)%>
   <% @skeins.each do |skein| %>
     <div class="card" style="width: 20rem;">
@@ -15,6 +21,11 @@
           </div>
         </div>
         <div class="row">
+          <div class="skein-spinner">
+            Description: <%= skein.description %>
+          </div>
+        </div>
+        <div class="row">
           <div class="skein-availability">
             <%= skein.skein_available %> skeins available
           </div>
@@ -22,7 +33,6 @@
         </div>
 
         <div class="row">
-          <p class="card-text">Some text describing the product goes here and it sure is fabulous</p>
           <%= link_to fa_icon('info-circle'), skein %>
           <% if current_user == skein.spinned_by || logged_in?(:site_admin) %>
           <%= link_to fa_icon('pencil-square-o'), edit_skein_path(skein)  %>
