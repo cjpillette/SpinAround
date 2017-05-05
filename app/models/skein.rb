@@ -4,4 +4,13 @@ class Skein < ApplicationRecord
 
   validates_presence_of :price
   mount_uploader :photo_main, AvatarUploader
+
+ def self.search(search)
+    if search
+      where(["description LIKE ?","%#{search.downcase}%"])
+    else
+      all
+    end
+  end
+
 end

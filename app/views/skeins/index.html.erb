@@ -1,4 +1,7 @@
 <h1>Skeins</h1>
+
+<%= link_to 'Advanced Search', new_search_path %>
+<br>
 <%= link_to 'New Skein', new_skein_path if logged_in?(:site_admin, :spinner_seller)%>
   <% @skeins.each do |skein| %>
     <div class="card" style="width: 20rem;">
@@ -15,14 +18,18 @@
           </div>
         </div>
         <div class="row">
+          <div class="skein-spinner">
+            Description: <%= skein.description %>
+          </div>
+        </div>
+        <div class="row">
           <div class="skein-availability">
-            <%= skein.skein_available %> skeins available
+            <%= skein.skein_available %> skein(s) available
           </div>
           <%= link_to fa_icon('ravelry'), yarn_path(skein.yarn) %>
         </div>
 
         <div class="row">
-          <p class="card-text">Some text describing the product goes here and it sure is fabulous</p>
           <%= link_to fa_icon('info-circle'), skein %>
           <% if current_user == skein.spinned_by || logged_in?(:site_admin) %>
           <%= link_to fa_icon('pencil-square-o'), edit_skein_path(skein)  %>
@@ -34,5 +41,7 @@
     <% end %>
 
 <br>
+
+<%= paginate @skeins %>
 
 

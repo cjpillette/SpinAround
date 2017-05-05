@@ -1,0 +1,18 @@
+<h1>Search Result</h1>
+
+<p><%= link_to 'Back', new_search_path %></p>
+
+<% if @search.search_skeins.empty? %>
+  <p>No records found<p>
+<% else %>
+
+  <% @search.search_skeins.each do |c| %>
+  <hr>
+  <div>
+    <h2><%= c.description%></h2>
+    <p>Price: $<%= c.price%></p>
+  </div>
+  <% end %>
+
+<% end %>
+

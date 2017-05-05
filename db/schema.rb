@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170503091631) do
+ActiveRecord::Schema.define(version: 20170505014018) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,14 @@ ActiveRecord::Schema.define(version: 20170503091631) do
     t.index ["user_id"], name: "index_profiles_on_user_id", using: :btree
   end
 
+  create_table "searches", force: :cascade do |t|
+    t.string   "keywords"
+    t.decimal  "min_price"
+    t.decimal  "max_price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "skeins", force: :cascade do |t|
     t.decimal  "price"
     t.integer  "spinned_by_id"
@@ -54,6 +62,7 @@ ActiveRecord::Schema.define(version: 20170503091631) do
     t.integer  "yarn_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.text     "description"
     t.index ["spinned_by_id"], name: "index_skeins_on_spinned_by_id", using: :btree
     t.index ["yarn_id"], name: "index_skeins_on_yarn_id", using: :btree
   end
