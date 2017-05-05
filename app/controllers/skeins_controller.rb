@@ -5,7 +5,7 @@ class SkeinsController < ApplicationController
   # GET /skeins
   # GET /skeins.json
   def index
-    @skeins = Skein.search(params[:search])
+    @skeins = Skein.all
   end
 
   # GET /skeins/1

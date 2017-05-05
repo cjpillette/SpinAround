@@ -5,6 +5,8 @@
   <%= submit_tag "Search" %>
 <% end %>
 
+<%= link_to 'Advanced Search', new_search_path %>
+
 <%= link_to 'New Skein', new_skein_path if logged_in?(:site_admin, :spinner_seller)%>
   <% @skeins.each do |skein| %>
     <div class="card" style="width: 20rem;">
@@ -27,7 +29,7 @@
         </div>
         <div class="row">
           <div class="skein-availability">
-            <%= skein.skein_available %> skeins available
+            <%= skein.skein_available %> skein(s) available
           </div>
           <%= link_to fa_icon('ravelry'), yarn_path(skein.yarn) %>
         </div>
