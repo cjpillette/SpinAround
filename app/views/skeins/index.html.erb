@@ -6,12 +6,7 @@
       <div class="card-block">
         <div class="row">
           <h4 class="card-title">
-            <div class="skein-price">
-              <%= skein.price %> AUD
-            </div>
-            <div class="shopping-cart">
-              <%= fa_icon('cart-arrow-down') %>
-            </div>
+            <%= render "cart", skein: skein %>        
           </h4>
         </div>
         <div class="row">
@@ -39,3 +34,5 @@
     <% end %>
 
 <br>
+
+

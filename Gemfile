@@ -60,3 +60,7 @@ gem 'mini_magick', '~> 4.5', '>= 4.5.1'
 gem 'carrierwave-aws', '~> 1.1'
 gem 'dotenv-rails', '~> 2.2', '>= 2.2.1'
 gem 'petergate', '~> 1.6', '>= 1.6.3'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.3.3'
+end
