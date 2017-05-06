@@ -1,4 +1,13 @@
 <p>
+  <strong>Your photo:</strong>
+    <% if @profile.profile_avatar.present? %>
+      <%= image_tag(@profile.profile_avatar, class: 'card-img-top', width: '100%') %>
+    <% else %>
+      <%= image_tag('knitting_sheep', class: 'card-img-top', width: '50%') %>
+    <% end %>
+</p>
+
+<p>
   <strong>First name:</strong>
   <%= @profile.first_name %>
 </p>
@@ -22,6 +31,12 @@
   <%= @profile.suburb %>,
   <%= @profile.postcode %>,
   <%= @profile.country %>
+</p>
+
+<p>
+  <strong>Contact:</strong>
+  Email: <% @profile.user.email %>
+  Phone: <% @profile.phone_number %>
 </p>
 
 

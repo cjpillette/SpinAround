@@ -1,10 +1,10 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
-
+  
   # GET /profiles
   # GET /profiles.json
   def index
-    @profiles = Profile.all
+    @profiles = Profile.page(params[:page]).per(6)
   end
 
   # GET /profiles/1
@@ -25,6 +25,7 @@ class ProfilesController < ApplicationController
   # POST /profiles.json
   def create
     @profile = Profile.new(profile_params)
+    @profile.user = current_user
 
     respond_to do |format|
       if @profile.save
@@ -69,6 +70,6 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:first_name, :last_name, :is_guild_member, :street_address, :suburb, :postcode, :country, :user_id)
+      params.require(:profile).permit(:profile_avatar, :first_name, :last_name, :is_guild_member, :street_address, :suburb, :postcode, :country, :phone_number, :user_id)
     end
 end
