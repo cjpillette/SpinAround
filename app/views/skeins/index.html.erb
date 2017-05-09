@@ -12,7 +12,7 @@
         <div class="row">
           <h4 class="card-title">
             <label>
-              <span>Price: $ <%= skein.price %></span>
+              <span>Price: $ <%= "%.2f" % skein.price %></span>
             </label>
             <input id="skein_quantity" name="skein_quantity[]" max="<%= skein.skein_available %>" type="number" value="0" />
             <div class="shopping-cart">

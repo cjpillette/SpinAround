@@ -3,7 +3,7 @@
   <%= image_tag(selected_skein.photo_main, width: '100%') %>
   <p>
     <strong>Price:</strong>
-    <%= selected_skein.price %>
+    AUD <%= "%.2f" % selected_skein.price %>
   </p>
   <p>
     <strong>Quantity selected</strong>
@@ -22,7 +22,7 @@
   </p>
 <% end %>
 
-<h1>Total Price: AUD <%= @cart_total %></h1>
+<h1>Total Price: AUD <%= "%.2f" % @cart_total %></h1>
 
 <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
   data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
