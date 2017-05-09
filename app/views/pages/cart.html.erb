@@ -1,1 +1,4 @@
-
+<h1>These are the items in your cart:</h1>
+<% @selected_skeins.each do |selected_skein| %>
+<h2><%= selected_skein.inspect %></h2>
+<% end %>
