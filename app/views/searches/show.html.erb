@@ -7,12 +7,50 @@
 <% else %>
 
   <% @search.search_skeins.each do |c| %>
-  <hr>
-  <div>
-    <h2><%= c.description%></h2>
-    <p>Price: $<%= c.price%></p>
+    <div class="card" style="width: 20rem;">
+    <%= image_tag(c.photo_main, class: 'card-img-top', width: '100%') %>
+    <div class="card-block">
+      <div class="row">
+        <h4 class="card-title">
+          <div class="row">
+            <label><%= c.name %></label>
+          </div>
+          <label>
+            <span>Price: $ <%= "%.2f" % c.price %></span>
+          </label>
+          <input id="skein_quantity" name="skein_quantity[]" max="<%= c.skein_available %>" type="number" value="0" />
+          <div class="shopping-cart">
+            <%= fa_icon('cart-arrow-down') %>
+          </div>
+        </h4>
+      </div>
+      <input type="hidden" name="skein_ids[]" value="<%= c.id %>" />
+      <div class="row">
+        <div class="skein-spinner">
+          Spinned by: <%= c.spinned_by.profile.first_name %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="skein-spinner">
+          Description: <%= c.description %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="skein-availability">
+          <%= c.skein_available %> skein(s) available
+        </div>
+        <%= link_to fa_icon('ravelry'), yarn_path(c.yarn) %>
+      </div>
+
+      <div class="row">
+        <%= link_to fa_icon('info-circle'), c %>
+        <% if current_user == c.spinned_by || logged_in?(:site_admin) %>
+        <%= link_to fa_icon('pencil-square-o'), edit_skein_path(c)  %>
+        <%= link_to fa_icon('trash'), c, method: :delete, data: { confirm: 'Are you sure?' }  %>
+        <% end %>
+      </div>
+    </div>
   </div>
   <% end %>
 
 <% end %>
-
