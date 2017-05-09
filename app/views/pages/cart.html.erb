@@ -1,13 +1,13 @@
 <h1>These are the items in your cart:</h1>
-<% @selected_skeins.each do |selected_skein| %>
+<% @selected_skeins.each_with_index do |selected_skein, index| %>
   <%= image_tag(selected_skein.photo_main, width: '100%') %>
   <p>
     <strong>Price:</strong>
     <%= selected_skein.price %>
   </p>
   <p>
-    <strong>Number selected</strong>
-    1
+    <strong>Quantity selected</strong>
+    <%= @quantities[index]%>
   </p>
   <p>
     <strong>Spinned by:</strong>
