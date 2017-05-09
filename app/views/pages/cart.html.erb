@@ -1,1 +1,32 @@
+<h1>These are the items in your cart:</h1>
+<% @selected_skeins.each_with_index do |selected_skein, index| %>
+  <%= image_tag(selected_skein.photo_main, width: '100%') %>
+  <p>
+    <strong>Price:</strong>
+    AUD <%= "%.2f" % selected_skein.price %>
+  </p>
+  <p>
+    <strong>Quantity selected</strong>
+    <%= @quantities[index]%>
+  </p>
+  <p>
+    <strong>Spinned by:</strong>
+    <%= selected_skein.spinned_by.profile.first_name %>
+  </p>
+  <p>
+    <strong>Description:</strong>
+    <%= selected_skein.description %>
+  </p>
+  <p>
+    <%= link_to 'About the yarn', yarn_path(selected_skein.yarn) %>
+  </p>
+<% end %>
 
+<h1>Total Price: AUD <%= "%.2f" % @cart_total %></h1>
+
+<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+  data-description="Your skeins"
+  data-amount="<%= 100 * @cart_total %> "
+  data-locale="auto">
+</script>
