@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<%= image_tag(@skein.photo_main, width: '100%') %>
 
 <p>
   <strong>Price:</strong>
@@ -11,18 +11,13 @@
 </p>
 
 <p>
-  <strong>Spinned by:</strong>
+  <strong>Description:</strong>
   <%= @skein.description %>
 </p>
 
 <p>
   <strong>Skein available:</strong>
   <%= @skein.skein_available %>
-</p>
-
-<p>
-  <strong>Photo main:</strong>
-  <%= image_tag(@skein.photo_main, width: '100%') %>
 </p>
 
 <p>
