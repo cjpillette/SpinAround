@@ -23,3 +23,10 @@
 <% end %>
 
 <h1>Total Price: AUD <%= @cart_total %></h1>
+
+<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+  data-description="Your skeins"
+  data-amount="<%= 100 * @cart_total %> "
+  data-locale="auto">
+</script>
