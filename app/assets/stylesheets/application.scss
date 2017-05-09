@@ -3,7 +3,15 @@
 @import "pages";
 @import "skeins";
 
-.wrapper {
-  min-height:100%;
-  position:relative;
+
+.bg-faded {
+  background-color: black;
+}
+
+.navbar-toggler-right {
+  background-color: #FCCE3B;
+}
+
+.navbar-brand {
+  overflow: visible;
 }

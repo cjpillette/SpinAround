@@ -13,9 +13,8 @@
     <div class="card-block">
       <div class="row">
         <h4 class="card-title">
-          <div class="row">
-            <label><%= c.name %></label>
-          </div>
+            <label><span><%= c.name %></span></label>
+          <br>
           <label>
             <span>Price: $ <%= "%.2f" % c.price %></span>
           </label>
@@ -53,7 +52,7 @@
     </div>
   </div>
   <% end %>
-<button type="submit">Submit</button>
+<button type="submit">Add to Cart</button>
 <% end %>
 
 <% end %>

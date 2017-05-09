@@ -26,7 +26,21 @@ footer {
   background-position: center top;
   // height: 1068px;
   position: absolute;
+  top: 120px;
+}
+
+.red-knitting-background {
+  background-image: url(red-wool.png);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100%;
+  position: absolute;
   top: 54px;
+}
+
+.index-wrapper {
+  width: 100%;
+  height: 568px;
 }
 
 #contact-details {

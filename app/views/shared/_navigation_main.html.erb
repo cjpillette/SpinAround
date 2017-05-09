@@ -2,29 +2,29 @@
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" href="#">Spinning Guild</a>
+  <%= link_to image_tag('SpinningIcon.png'), root_path, class: 'navbar-brand'%>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <%= link_to 'Hand spun yarn', skeins_path, class: 'nav-link' %>
+      <li class="nav-item">
+        <%= link_to 'Hand spun yarn', skeins_path, class: 'nav-link text-warning' %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Contact</a>
+        <%= link_to 'Contact', contact_path, class: 'nav-link text-warning' %>
       </li>
       <% if user_signed_in? %>
       <li>
-        <%= link_to'Logout', destroy_user_session_path, :method => :delete, class: 'nav-link' %>
+        <%= link_to'Logout', destroy_user_session_path, :method => :delete, class: 'nav-link text-warning' %>
       </li>
       <li>
-        <%= link_to 'Update my details', edit_user_registration_path, class: 'nav-link' %>
+        <%= link_to 'Update my details', edit_user_registration_path, class: 'nav-link text-warning' %>
       </li>
       <% else %>
       <li>
-        <%= link_to 'Login', new_user_session_path, class: 'nav-link' %>
+        <%= link_to 'Login', new_user_session_path, class: 'nav-link text-warning' %>
       </li>
       <li>
-        <%= link_to 'Sign up', new_user_registration_path, class: 'nav-link' %>
+        <%= link_to 'Sign up', new_user_registration_path, class: 'nav-link text-warning' %>
       </li>
       <% end %>
     </ul>
