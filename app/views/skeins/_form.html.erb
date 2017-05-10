@@ -1,3 +1,5 @@
+<form>
+<div class="form-group">
 <%= form_for(skein) do |f| %>
   <% if skein.errors.any? %>
     <div id="error_explanation">
@@ -12,37 +14,47 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :price %>
-    <%= f.text_field :price %>
+    <%= f.label :price, "Price in AUD " %>
+    <%= f.text_field :price, class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= f.label :spinned_by_id %>
-    <%= f.text_field :spinned_by_id %>
+    <%= f.label :name, "Name your skein " %>
+    <%= f.text_field :name, class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= f.label :description %>
-    <%= f.text_field :description %>
+    <%= f.hidden_field :spinned_by_id, value: current_user.id %>
+<!--     <%= f.label :spinned_by_id %>
+    <%= f.text_field :spinned_by_id %> -->
   </div>
 
   <div class="field">
-    <%= f.label :skein_available %>
-    <%= f.number_field :skein_available %>
+    <%= f.label :description, "Describe skein attributes " %>
+    <%= f.text_field :description, class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= f.label :photo_main %>
-    <%= f.file_field :photo_main %>
+    <%= f.label :skein_available, "Number of skeins available " %>
+    <%= f.number_field :skein_available, class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= f.label :yarn_id %>
-    <%= f.text_field :yarn_id %>
+    <%= f.label :photo_main, "Skein photos to attach" %>
+    <%= f.file_field :photo_main, class: 'form-control-file' %>
   </div>
 
-  <div class="actions">
+  <div class="field">
+    <%= f.label :yarn_id, "Yarn ID corresponding to the fibre spun " %>
+    <%= f.text_field :yarn_id, class: 'form-control' %>
+  </div>
+
+  <%= link_to 'Show the fibre', yarns_path, class: 'btn btn-secondary' %>
+  <br>
+
+  <div class="btn btn-success">
     <%= f.submit %>
   </div>
 
 <% end %>
+</form>

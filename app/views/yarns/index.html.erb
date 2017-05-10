@@ -1,26 +1,30 @@
-<h1>Yarns</h1>
-  <% @yarns.each do |yarn| %>
-    <div class="card" style="width: 20rem;">
-      <img class="card-img-top" src="http://placehold.it/350x200" alt="Card image cap">
-      <div class="card-block">
-        <h4 class="card-title">Yarn</h4>
-        <%= yarn.weight %>
-        <%= yarn.dye %>
-        <%= yarn.spinned_as %>
-        <%= yarn.metrage %>
-        <%= yarn.diameter %>
-        <%= yarn.ply %>
-        <%= yarn.color %>
-        <%= yarn.origin %>
-        <p class="card-text"><%= yarn.description %></p>
-        <%= link_to fa_icon('info-circle'), yarn %>
-        <%= link_to fa_icon('pencil-square-o'), edit_yarn_path(yarn) %>
-        <%= link_to fa_icon('trash'), yarn, method: :delete, data: { confirm: 'Are you sure?' } %>
-      </div>
-    </div>
-    <% end %>
+<div class="wrapper">
+
+<%= link_to 'New Yarn', new_yarn_path, class: 'btn btn-info' %>
+
+    <h1>Yarns</h1>
+      <% @yarns.each do |yarn| %>
+        <div class="card" style="width: 20rem;">
+          <img class="card-img-top" src="http://placehold.it/350x200" alt="Card image cap">
+          <div class="card-block">
+            <h4 class="card-title">Yarn id: <%= yarn.id %> </h4>
+            weight: <%= yarn.weight %><br>
+            dye type: <%= yarn.dye %><br>
+            type: <%= yarn.spinned_as %><br>
+            metrage: <%= yarn.metrage %>m<br>
+            fibre diameter: <%= yarn.diameter %><br>um
+            ply: <%= yarn.ply %><br>
+            color: <%= yarn.color %><br>
+            origin: <%= yarn.origin %><br>
+            <p class="card-text"><%= yarn.description %></p><br>
+            <%= link_to fa_icon('info-circle'), yarn %>
+            <%= link_to fa_icon('pencil-square-o'), edit_yarn_path(yarn) %>
+            <%= link_to fa_icon('trash'), yarn, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        </div>
+        <% end %>
 
 
-<br>
+    <br>
 
-<%= link_to 'New Yarn', new_yarn_path %>
+</div>

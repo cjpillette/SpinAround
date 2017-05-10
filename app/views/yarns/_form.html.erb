@@ -12,18 +12,19 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :weight %>
-    <%= f.number_field :weight %>
+    <%= f.label :weight, "Select weight" %>
+    <%= f.select :weight, :collection => Yarn.weights.keys.to_a %>
   </div>
 
   <div class="field">
     <%= f.label :dye %>
-    <%= f.number_field :dye %>
+    <%= f.select :dye, :collection => Yarn.dyes.keys.to_a %>
   </div>
 
   <div class="field">
     <%= f.label :spinned_as %>
-    <%= f.number_field :spinned_as %>
+    <%= f.select :spinned_as, :collection => Yarn.spinned_as.keys.to_a %>
+  </div>
   </div>
 
   <div class="field">
