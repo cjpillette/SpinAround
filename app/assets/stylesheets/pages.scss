@@ -24,7 +24,6 @@ footer {
   background-image: url(hand-spun-3.jpg);
   background-repeat: repeat;
   background-position: center top;
-  // height: 1068px;
   position: absolute;
   top: 120px;
   z-index: -5;
@@ -46,4 +45,12 @@ footer {
 
 #contact-details {
   margin-top: 30px;
+}
+
+.welcome {
+  position: fixed;
+  top: 120px;
+  left: 20px;
+  font-size: 40px;
+  color: #FCCE3B;
 }

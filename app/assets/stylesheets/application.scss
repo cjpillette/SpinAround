@@ -15,3 +15,8 @@
 .navbar-brand {
   overflow: visible;
 }
+
+.navbar {
+  z-index: 10;
+  position: relative;
+}

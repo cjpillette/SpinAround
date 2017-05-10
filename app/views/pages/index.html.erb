@@ -1,1 +1,6 @@
 <%= image_tag('red-wool.png') %>
+<div class="welcome">
+<% if user_signed_in? %>
+  Hello <%= current_user.profile.first_name %>
+  <% end %>
+</div>
