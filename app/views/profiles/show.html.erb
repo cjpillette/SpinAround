@@ -1,5 +1,4 @@
 <p>
-  <strong>Your photo:</strong>
     <% if @profile.profile_avatar.present? %>
       <%= image_tag(@profile.profile_avatar, class: 'card-img-top', width: '100%') %>
     <% else %>
@@ -34,11 +33,11 @@
 </p>
 
 <p>
-  <strong>Contact:</strong>
-  Email: <% @profile.user.email %>
-  Phone: <% @profile.phone_number %>
+  <strong>Contact:</strong><br>
+  Email: <%= @profile.user.email %><br>
+  Phone: <%= @profile.phone_number %>
 </p>
 
 
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
+<%= link_to 'Edit', edit_profile_path(@profile) %> 
+

@@ -202,6 +202,30 @@ Skein.create!(
 puts "3 skeins were created"
 
 Profile.create!(
+    first_name: "Brigitte",
+    last_name: "Croissant",
+    is_guild_member: true,
+    street_address: "11 nicholson road",
+    suburb: "Carlton",
+    postcode: "3010",
+    country: "Australia",
+    phone_number: "(03) 9784 2324",
+    user_id: 1,
+)
+
+Profile.create!(
+    first_name: "Berthe",
+    last_name: "Brioche",
+    is_guild_member: true,
+    street_address: "15 nicholson road",
+    suburb: "Carlton",
+    postcode: "3010",
+    phone_number: "(03) 9784 2324",
+    country: "Australia",
+    user_id: 2,
+)
+
+Profile.create!(
     first_name: "Susan",
     last_name: "Smith",
     is_guild_member: true,
@@ -209,6 +233,7 @@ Profile.create!(
     suburb: "Pleasance",
     postcode: "3067",
     country: "Australia",
+    phone_number: "(03) 9784 2324",
     user_id: 3,
 )
 
@@ -220,6 +245,7 @@ Profile.create!(
     suburb: "Frogville",
     postcode: "3055",
     country: "Australia",
+    phone_number: "04 21 354 585",
     user_id: 4,
 )
 
@@ -231,6 +257,7 @@ Profile.create!(
     suburb: "Yarraville",
     postcode: "3020",
     country: "Australia",
+    phone_number: "04 21 354 585",
     user_id: 5,
 )
 
@@ -242,6 +269,7 @@ Profile.create!(
     suburb: "Supertown",
     postcode: "3090",
     country: "Australia",
+    phone_number: "04 21 354 585",
     user_id: 6,
 )
 
@@ -253,6 +281,7 @@ Profile.create!(
     suburb: "Stonetown",
     postcode: "3095",
     country: "Australia",
+    phone_number: "04 21 354 585",
     user_id: 7,
 )
 
@@ -264,6 +293,7 @@ Profile.create!(
     suburb: "Greaville",
     postcode: "3009",
     country: "Australia",
+    phone_number: "04 21 354 585",
     user_id: 8,
 )
 
@@ -275,6 +305,7 @@ Profile.create!(
     suburb: "Clarence",
     postcode: "3059",
     country: "Australia",
+    phone_number: "04 21 354 585",
     user_id: 9,
 )
 
@@ -287,29 +318,10 @@ Profile.create!(
     suburb: "Clarence",
     postcode: "3059",
     country: "Australia",
+    phone_number: "04 21 354 585",
     user_id: 10,
 )
 
-Profile.create!(
-    first_name: "Brigitte",
-    last_name: "Croissant",
-    is_guild_member: true,
-    street_address: "11 nicholson road",
-    suburb: "Carlton",
-    postcode: "3010",
-    country: "Australia",
-    user_id: 1,
-)
 
-Profile.create!(
-    first_name: "Berthe",
-    last_name: "Brioche",
-    is_guild_member: true,
-    street_address: "15 nicholson road",
-    suburb: "Carlton",
-    postcode: "3010",
-    country: "Australia",
-    user_id: 2,
-)
 
 puts "10 profiles were created"

@@ -2,5 +2,10 @@
 <div class="welcome">
 <% if user_signed_in? %>
   Hello <%= current_user.profile.first_name %>
+  <% if current_user.roles[0] == :site_admin %>
+  <%= link_to fa_icon('user', style: "color:#FCCE3B"), profiles_path  %>
+  <% else %>
+  <%= link_to fa_icon('user', style: "color:#FCCE3B"), profile_path(current_user)  %>
+  <% end %>
   <% end %>
 </div>
