@@ -1,28 +1,48 @@
-<%= image_tag(@skein.photo_main, width: '100%') %>
+<div class="form">
+  <%= image_tag(@skein.photo_main, width: '100%') %>
 
-<p>
-  <strong>Price:</strong>
-  AUD <%= "%.2f" % @skein.price %>
-</p>
+  <p>
+    <strong>Price:</strong>
+    <div class="form-control">
+      AUD <%= "%.2f" % @skein.price %>
+    </div>
+  </p>
 
-<p>
-  <strong>Spinned by:</strong>
-  <%= @skein.spinned_by.profile.first_name %>
-</p>
+  <p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @skein.description %>
-</p>
+    <strong>Name:</strong>
+    <div class="form-control">
+    <%= @skein.name %>
+    </div>
+  </p>
 
-<p>
-  <strong>Skein available:</strong>
-  <%= @skein.skein_available %>
-</p>
+  <p>
 
-<p>
-  <%= link_to 'About the yarn', yarn_path(@skein.yarn) %>
-</p>
+    <strong>Spinned by:</strong>
+    <div class="form-control">
+    <%= @skein.spinned_by.profile.first_name %>
+    </div>
+  </p>
+
+  <p>
+
+    <strong>Description:</strong>
+    <div class="form-control">
+    <%= @skein.description %>
+    </div>
+  </p>
+
+  <p>
+    <strong>Skein available:</strong>
+    <div class="form-control">
+    <%= @skein.skein_available %>
+    </div>
+  </p>
+
+  <p>
+    <%= link_to 'About the yarn', yarn_path(@skein.yarn)%>
+  </p>
+</div>
 
 <% if current_user == @skein.spinned_by || logged_in?(:site_admin) %>
 <%= link_to 'Edit', edit_skein_path(@skein) %> |

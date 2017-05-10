@@ -1,57 +1,61 @@
-<h1>Skeins</h1>
+<div class="wrapper">
+  <h1>Skeins for sale</h1>
 
-<%= link_to 'Advanced Search', new_search_path %>
-<br>
-<%= link_to 'New Skein', new_skein_path if logged_in?(:site_admin, :spinner_seller)%>
+  <%= link_to 'Advanced Search', new_search_path, class: 'btn btn-info btn-lg' %>
+  <br>
+  <% if current_user == logged_in?(:site_admin) || logged_in?(:spinner_seller) %>
+  <%= link_to 'New Skein', new_skein_path, class: 'btn btn-primary btn-lg'%>
+  <% end %>
 
-<%= form_tag(cart_path, method: :put) do %>
-  <% @skeins.each do |skein| %>
-    <div class="card" style="width: 20rem;">
-      <%= image_tag(skein.photo_main, class: 'card-img-top', width: '100%') %>
-      <div class="card-block">
-        <div class="row">
-          <h4 class="card-title">
-            <label>
-              <span>Price: $ <%= "%.2f" % skein.price %></span>
-            </label>
-            <input id="skein_quantity" name="skein_quantity[]" max="<%= skein.skein_available %>" type="number" value="0" />
-            <div class="shopping-cart">
-              <%= fa_icon('cart-arrow-down') %>
+  <%= form_tag(cart_path, method: :put) do %>
+    <% @skeins.each do |skein| %>
+      <div class="card" style="width: 20rem;">
+        <%= image_tag(skein.photo_main, class: 'card-img-top', width: '100%') %>
+        <div class="card-block">
+          <div class="row">
+            <h4 class="card-title">
+              <label>
+                <span>Price: $ <%= "%.2f" % skein.price %></span>
+              </label>
+              <input id="skein_quantity" name="skein_quantity[]" max="<%= skein.skein_available %>" type="number" value="0" />
+              <div class="shopping-cart">
+                <%= fa_icon('cart-arrow-down') %>
+              </div>
+            </h4>
+          </div>
+          <input type="hidden" name="skein_ids[]" value="<%= skein.id %>" />
+          <div class="row">
+            <div class="skein-spinner">
+              Spinned by: <%= skein.spinned_by.profile.first_name %>
             </div>
-          </h4>
-        </div>
-        <input type="hidden" name="skein_ids[]" value="<%= skein.id %>" />
-        <div class="row">
-          <div class="skein-spinner">
-            Spinned by: <%= skein.spinned_by.profile.first_name %>
           </div>
-        </div>
-        <div class="row">
-          <div class="skein-spinner">
-            Description: <%= skein.description %>
+          <div class="row">
+            <div class="skein-spinner">
+              Description: <%= skein.description %>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="skein-availability">
-            <%= skein.skein_available %> skein(s) available
+          <div class="row">
+            <div class="skein-availability">
+              <%= skein.skein_available %> skein(s) available
+            </div>
+            <%= link_to fa_icon('ravelry'), yarn_path(skein.yarn) %>
           </div>
-          <%= link_to fa_icon('ravelry'), yarn_path(skein.yarn) %>
-        </div>
 
-        <div class="row">
-          <%= link_to fa_icon('info-circle'), skein %>
-          <% if current_user == skein.spinned_by || logged_in?(:site_admin) %>
-          <%= link_to fa_icon('pencil-square-o'), edit_skein_path(skein)  %>
-          <%= link_to fa_icon('trash'), skein, method: :delete, data: { confirm: 'Are you sure?' }  %>
-          <% end %>
+          <div class="row">
+            <%= link_to fa_icon('info-circle'), skein %>
+            <% if current_user == skein.spinned_by || logged_in?(:site_admin) %>
+            <%= link_to fa_icon('pencil-square-o'), edit_skein_path(skein)  %>
+            <%= link_to fa_icon('trash'), skein, method: :delete, data: { confirm: 'Are you sure?' }  %>
+            <% end %>
+          </div>
         </div>
       </div>
-    </div>
-    <% end %>
-      <button type="submit">Submit</button>
+      <% end %>
+        <button type="submit">Submit</button>
 
-<% end %>
+  <% end %>
 
-<br>
+  <br>
 
-<%= paginate @skeins %>
+  <%= paginate @skeins %>
+</div>
