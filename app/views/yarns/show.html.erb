@@ -1,47 +1,70 @@
-<p>
-  <strong>Weight:</strong>
-  <%= @yarn.weight %>
-</p>
+<form>
+<div class="form-group">
+  <h2>Yarn id: <%= @yarn.id %></h2>
+    <p>
+      <strong>Weight:</strong>
+      <div class="form-control">
+      <%= @yarn.weight %>
+      </div>
+    </p>
 
-<p>
-  <strong>Dye:</strong>
-  <%= @yarn.dye %>
-</p>
+    <p>
+      <strong>Dye:</strong>
+      <div class="form-control">
+      <%= @yarn.dye %>
+      </div>
+    </p>
 
-<p>
-  <strong>Spinned as:</strong>
-  <%= @yarn.spinned_as %>
-</p>
+    <p>
+      <strong>Spinned as:</strong>
+      <div class="form-control">
+      <%= @yarn.spinned_as %>
+      </div>
+    </p>
 
-<p>
-  <strong>Metrage:</strong>
-  <%= @yarn.metrage %>
-</p>
+    <p>
+      <strong>Metrage:</strong>
+      <div class="form-control">
+      <%= @yarn.metrage %>
+      </div>
+    </p>
 
-<p>
-  <strong>Diameter:</strong>
-  <%= @yarn.diameter %>
-</p>
+    <p>
+      <strong>Diameter:</strong>
+      <div class="form-control">
+      <%= @yarn.diameter %>
+      </div>
+    </p>
 
-<p>
-  <strong>Ply:</strong>
-  <%= @yarn.ply %>
-</p>
+    <p>
+      <strong>Ply:</strong>
+      <div class="form-control">
+      <%= @yarn.ply %>
+      </div>
+    </p>
 
-<p>
-  <strong>Color:</strong>
-  <%= @yarn.color %>
-</p>
+    <p>
+      <strong>Color:</strong>
+      <div class="form-control">
+      <%= @yarn.color %>
+      </div>
+    </p>
 
-<p>
-  <strong>Origin:</strong>
-  <%= @yarn.origin %>
-</p>
+    <p>
+      <strong>Origin:</strong>
+      <div class="form-control">
+      <%= @yarn.origin %>
+      </div>
+    </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @yarn.description %>
-</p>
+    <p>
+      <strong>Description:</strong>
+      <div class="form-control">
+      <%= @yarn.description %>
+      </div>
+    </p>
+  </div>
+</form>
 
 <% if logged_in?(:site_admin, :spinner_seller) %>
 <%= link_to 'Edit', edit_yarn_path(@yarn) %> 

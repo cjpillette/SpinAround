@@ -1,6 +1,7 @@
-<div class="form">
+<form>
   <%= image_tag(@skein.photo_main, width: '100%') %>
 
+  <div class="form-control">
   <p>
     <strong>Price:</strong>
     <div class="form-control">
@@ -42,7 +43,8 @@
   <p>
     <%= link_to 'About the yarn', yarn_path(@skein.yarn)%>
   </p>
-</div>
+  </div>
+</form>
 
 <% if current_user == @skein.spinned_by || logged_in?(:site_admin) %>
 <%= link_to 'Edit', edit_skein_path(@skein) %> |
