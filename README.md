@@ -30,7 +30,7 @@ The main competition would be **Etsy**.
 - In my app the user would be able to dynamically place next to each other photos of the products they would purchase. This is particularly useful for **color-work** (i.e knitting fair isle / striped sweaters or weaving).
 - Also there is the option to pick up from the Melbourne store to **save on shipping cost**.
 
-![Home page](reference/portfolio-inspiration.jpg)
+![Home page](reference/etsy.png)
 
 # DESIGN
 ## Theme
@@ -42,13 +42,13 @@ Given that the target audience is typically **mature aged**, I designed a site t
 
 Ideally the two sided market place will reside within the hand weaver and spinning guild of victoria.
 
-![Home page](reference/color-palette.png)
+![Home page](reference/guild-website.png)
 
 ## Wireframes
 
 I've worked with a mobile first approach. Keeping the theme as described above.
 
-![Home page](reference/pulp-magazine.jpg)
+![Home page](reference/wireframe.png)
 
 ## My Trello Board
 
@@ -58,8 +58,9 @@ https://trello.com/b/r4Fbi5yX/spinning-yarn-round-round
 ## My Database
 
 I've used dbdesigner.net to jot down my relational tables and the schema.
+http://dbdesigner.net/designer/schema/87230
 
-![Home page](reference/portfolio-inspiration.jpg)
+![Home page](reference/database.png)
 
 # TECHNICAL CHALLENGES
 
@@ -84,7 +85,7 @@ I've used dbdesigner.net to jot down my relational tables and the schema.
 * stripe
 * rails-assets-tether
 * kaminari
-ruby "2.4.0"
+* ruby "2.4.0"
 
 
 # FUTURE WORK / IMPROVEMENT
