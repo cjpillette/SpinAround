@@ -171,7 +171,6 @@ puts "yarn with 2 compositions created"
 
 Skein.create!(
     price: 31.5,
-    name: "DK prairie",
     spinned_by_id: 3,
     skein_available: 1,
     description: "Merino that has been combed by delicate hands",
@@ -181,7 +180,6 @@ Skein.create!(
 
 Skein.create!(
     price: 35.5,
-    name: "Pretty in Pink",
     spinned_by_id: 4,
     skein_available: 3,
     description: "Mixed of merino 50percent and alpaca 50percent - green dye used",
@@ -191,7 +189,6 @@ Skein.create!(
 
 Skein.create!(
     price: 40,
-    name: 'Halloween in July',
     spinned_by_id: 5,
     skein_available: 2,
     description: "Cotton because I'm vegan",
