@@ -65,3 +65,5 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
 end
 gem 'kaminari', '~> 1.0', '>= 1.0.1'
+
+ruby "2.4.0"
