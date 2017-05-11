@@ -97,3 +97,4 @@ http://dbdesigner.net/designer/schema/87230
 * Rate spinners / yarn 
 * Improve cart system to be able to update/delete elements
 * User to be able to place photos together to check for color matching
+
