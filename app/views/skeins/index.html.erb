@@ -53,7 +53,7 @@
         </div>
       </div>
 
-      <%= button_to 'Add to Cart 2', line_items_path(skein_id: skein) %> </div>
+      <%= button_to 'Add to Cart', line_items_path(skein_id: skein), method: :post, remote: true %> </div>
 
     <% end %>
   <% end %>
