@@ -10,10 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170508021929) do
+ActiveRecord::Schema.define(version: 20170606233504) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "carts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "compositions", force: :cascade do |t|
     t.integer  "fibre_type_id"
@@ -30,6 +35,15 @@ ActiveRecord::Schema.define(version: 20170508021929) do
     t.boolean  "isAnimal"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "line_items", force: :cascade do |t|
+    t.integer  "skein_id"
+    t.integer  "cart_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cart_id"], name: "index_line_items_on_cart_id", using: :btree
+    t.index ["skein_id"], name: "index_line_items_on_skein_id", using: :btree
   end
 
   create_table "order_items", force: :cascade do |t|
@@ -137,6 +151,8 @@ ActiveRecord::Schema.define(version: 20170508021929) do
 
   add_foreign_key "compositions", "fibre_types"
   add_foreign_key "compositions", "yarns"
+  add_foreign_key "line_items", "carts"
+  add_foreign_key "line_items", "skeins"
   add_foreign_key "order_items", "orders"
   add_foreign_key "order_items", "skeins"
   add_foreign_key "orders", "order_statuses"

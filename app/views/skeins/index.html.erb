@@ -7,9 +7,11 @@
   <%= link_to 'New Skein', new_skein_path, class: 'btn btn-primary btn-lg'%>
   <% end %>
 
-  <%= form_tag(cart_path, method: :put) do %>
+
+  <% cache ['store', Skein.last] do %>
     <% @skeins.each do |skein| %>
       <div class="card" style="width: 20rem;">
+        <% cache ['entry', skein] do %>
         <%= image_tag(skein.photo_main, class: 'card-img-top', width: '100%') %>
         <div class="card-block">
           <div class="row">
@@ -50,10 +52,12 @@
           </div>
         </div>
       </div>
-      <% end %>
-        <button type="submit" class="btn btn-success">Add to cart</button>
 
+      <%= button_to 'Add to Cart 2', line_items_path(skein_id: skein) %> </div>
+
+    <% end %>
   <% end %>
+<% end %>
 
   <br>
 
