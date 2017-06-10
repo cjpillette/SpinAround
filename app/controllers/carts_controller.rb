@@ -42,10 +42,16 @@ class CartsController < ApplicationController
   end
 
   # DELETE /carts/1
+
   def destroy
-    @cart.destroy
-    redirect_to carts_url, notice: 'Cart was successfully destroyed.'
+    @cart.destroy if @cart.id == session[:cart_id]
+    session[:cart_id] = nil
+    respond_to do |format|
+      format.html { redirect_to root_url, notice: 'Your cart is currently empty' }
+      format.json { head :no_content }
+    end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -58,9 +64,13 @@ class CartsController < ApplicationController
       params[:cart]
     end
 
+    def line_item_params
+      params.require(:line_item).permit(:skein_id)
+    end
+
     def invalid_cart
       logger.error "Attempt to access invalid cart #{params[:id]}"
       redirect_to root_url, notice: 'Invalid cart'
-end
+    end
 
 end
