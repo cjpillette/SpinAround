@@ -19,7 +19,7 @@
               <label>
                 <span>Price: $ <%= "%.2f" % skein.price %></span>
               </label>
-              <input id="skein_quantity" name="skein_quantity[]" max="<%= skein.skein_available %>" type="number" value="0" />
+              <input id="skein_quantity" name="skein_quantity[]" max="<%= skein.skein_available %>" type="number" value="0"  />
               <div class="shopping-cart">
                 <%= link_to(fa_icon('cart-arrow-down'), line_items_path(skein_id: skein), method: :post, remote: true) %>
               </div>
