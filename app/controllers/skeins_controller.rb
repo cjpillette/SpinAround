@@ -70,6 +70,6 @@ class SkeinsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def skein_params
-      params.require(:skein).permit(:price, :spinned_by_id, :skein_available, :photo_main, :description, :yarn_id)
+      params.require(:skein).permit(:price, :spinned_by_id, :skein_available, :photo_main, :description, :yarn_id, :name)
     end
 end

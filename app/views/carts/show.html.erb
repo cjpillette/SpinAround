@@ -15,4 +15,5 @@
   </tr>
 </table>
 
-<%= button_to 'Empty cart', @cart, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= button_to 'Empty cart', @cart, class:"btn btn-warning", method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= button_to 'Continue shopping', root_path, class:"btn btn-info" %>
